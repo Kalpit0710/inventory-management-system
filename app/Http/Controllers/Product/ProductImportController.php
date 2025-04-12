@@ -31,7 +31,7 @@ class ProductImportController extends Controller
             $row_range    = range( 2, $row_limit );
             $column_range = range( 'J', $column_limit );
             $startcount = 2;
-            $data = array();
+            $data = [];
             foreach ( $row_range as $row ) {
                 $data[] = [
                     'name'          => $sheet->getCell( 'A' . $row )->getValue(),

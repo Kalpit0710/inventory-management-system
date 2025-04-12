@@ -43,7 +43,7 @@ if (!function_exists('make_reference_id')) {
 if (!function_exists('array_merge_numeric_values')) {
     function array_merge_numeric_values() {
         $arrays = func_get_args();
-        $merged = array();
+        $merged = [];
         foreach ($arrays as $array) {
             foreach ($array as $key => $value) {
                 if (!is_numeric($value)) {
