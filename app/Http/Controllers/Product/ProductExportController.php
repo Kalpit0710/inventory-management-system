@@ -14,7 +14,7 @@ class ProductExportController extends Controller
     {
         $products = Product::all()->sortBy('product_name');
 
-        $product_array [] = array(
+        $product_array [] = [
             'Product Name',
             'Category Id',
             'Unit Id',
@@ -23,11 +23,11 @@ class ProductExportController extends Controller
             'Buying Price',
             'Selling Price',
             'Product Image',
-        );
+        ];
 
         foreach($products as $product)
         {
-            $product_array[] = array(
+            $product_array[] = [
                 'Product Name' => $product->name,
                 'Category Id' => $product->category_id,
                 'Unit Id' => $product->unit_id,
@@ -36,7 +36,7 @@ class ProductExportController extends Controller
                 'Buying Price' =>$product->buying_price,
                 'Selling Price' =>$product->selling_price,
                 'Product Image' => $product->product_image,
-            );
+            ];
         }
 
         $this->store($product_array);
